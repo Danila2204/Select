@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 500px;
+}
+
+.arrow {
+  transition: 0.5s;
+}
+
+.select {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.select.open .select__drop-down {
+  display: block;
+}
+.select.open .select__input {
+  border-bottom: none;
+}
+.select.open .arrow {
+  transform: rotate(180deg);
+}
+.select.open .select__backdrop {
+  display: block;
+}
+.select__input {
+  height: 46px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.select__drop-down {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  top: 46px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 1px 1px 1px #000;
+}
+.select__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.select__item {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.select__item.selected {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.select__item:hover {
+  background-color: #eee;
+  cursor: pointer;
+  transition: 0.15s background-color;
+}
+.select__backdrop {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
